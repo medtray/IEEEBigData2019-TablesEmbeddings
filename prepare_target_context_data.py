@@ -38,7 +38,6 @@ print("shuffle done")
 
 list_of_categories=np.array(list_of_categories)[mylist]
 nb_files_in_training=len(list_of_categories)
-nb_files_in_training=2
 list_of_categories=list_of_categories[:nb_files_in_training]
 train_file_list = output_folder +'/list_of_categories'
 np.save(train_file_list,list_of_categories)
