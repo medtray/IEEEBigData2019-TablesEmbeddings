@@ -38,9 +38,9 @@ EMBEDDING_DIM = 100
 num_sampled = 10000
 n_iters = 1
 batch_size = 100
-resume_training=1
-chechpoint_period = 20000
-print_loss_period=400
+resume_training=0
+chechpoint_period = 200000
+print_loss_period=4000
 
 if resume_training:
     nb_steps_per_epoch=steps_per_epoch(chunks_folder,batch_size)
