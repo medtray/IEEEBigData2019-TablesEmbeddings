@@ -53,10 +53,10 @@ for w_pgTitle in np.arange(0.4, 0.44, 0.1):
 
                                     inter2=np.array(inter2)
 
-                                    file_name = os.path.join(ranking_folder,'scores_gs.txt')
+                                    file_name = os.path.join(ranking_folder,'scores_mcon.txt')
 
                                     np.savetxt(file_name, inter2, fmt="%s")
-                                    batcmd = "cd " + ranking_folder + " && ./trec_eval -m ndcg_cut.20 qrels.txt scores_gs.txt"
+                                    batcmd = "cd " + ranking_folder + " && ./trec_eval -m ndcg_cut.20 qrels.txt scores_mcon.txt"
                                     result = subprocess.check_output(batcmd, shell=True, encoding='cp437')
                                     res = result.split('\t')
                                     ndcg = float(res[2])
