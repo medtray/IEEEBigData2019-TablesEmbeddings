@@ -36,7 +36,7 @@ checkpoint_path = os.path.join(model_dir, checkpoint_name)
 
 EMBEDDING_DIM = 100
 num_sampled = 10000
-n_iters = 1
+n_iters = 3
 batch_size = 100
 resume_training=0
 chechpoint_period = 200000
