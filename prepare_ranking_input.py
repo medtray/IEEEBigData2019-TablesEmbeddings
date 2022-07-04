@@ -21,6 +21,9 @@ wikitables_folder='wikitables'
 file_to_index='mcon_predictions.json'
 path=os.path.join(wikitables_folder,file_to_index)
 
+ranking_folder = os.path.join(wikitables_folder, 'ranking_results')
+testing_tables = os.path.join(wikitables_folder, 'multi_field.txt')
+
 with open(path) as f:
     dt = json.load(f)
 
@@ -30,7 +33,7 @@ test_data=data_csv['table_id']
 query=data_csv['query']
 relevance=data_csv['rel']
 query_ids=list(set(data_csv['query_id']))
-text_file = open("multi_field.txt", "r")
+text_file = open(testing_tables, "r")
 lines = text_file.readlines()
 mcon_data_folder='mcon_data'
 chunks_folder=os.path.join(wikitables_folder,mcon_data_folder)
@@ -394,7 +397,7 @@ with tf.compat.v1.Session(graph=graph,config=config) as sess:
         final_table = np.concatenate(final_table, axis=0)
         print(len(final_table))
 
-        ranking_folder = os.path.join(wikitables_folder, 'ranking_results')
+        
         file_name = os.path.join(ranking_folder, 'rank_mcon.txt')
         np.savetxt(file_name, final_table, fmt="%s")
     late_fusion_ranking_final()
