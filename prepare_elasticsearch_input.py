@@ -25,6 +25,9 @@ output_int2word=np.load(chunks_folder+'/output_int2word_with_context.npy',allow_
 output_int2word=output_int2word[()]
 output_vocab_size = len(output_int2word)
 model_dir = chunks_folder + '/skip_gram_model_with_context'
+file_to_index='mcon_predictions.json'
+table_feats_path=os.path.join(wikitables_folder,file_to_index)
+
 EMBEDDING_DIM = 100
 top_predictions=20
 additional_att=20
@@ -251,5 +254,5 @@ with tf.compat.v1.Session(graph=graph,config=config) as sess:
 
             pbar.update(1)
 
-with open('mcon_predictions.json', 'w') as outfile:
+with open(table_feats_path, 'w') as outfile:
     json.dump(docs, outfile)
