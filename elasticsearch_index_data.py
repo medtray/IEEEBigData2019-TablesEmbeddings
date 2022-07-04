@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/mohamed/PycharmProjects/nordlys')
+sys.path.append('/path/to/nordlys')
 from nordlys.core.retrieval.elastic import Elastic
 import os
 import json
