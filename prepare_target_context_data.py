@@ -17,7 +17,7 @@ def hasNumbers(inputString):
 wikitables_folder='wikitables'
 mcon_data_folder='mcon_data'
 output_folder=os.path.join(wikitables_folder,mcon_data_folder)
-data_folder='/home/mohamed/PycharmProjects/Data-Search-Project/tables_redi2_1'
+data_folder='/path/to/tables'
 
 if not os.path.exists(output_folder):
     os.mkdir(output_folder)
