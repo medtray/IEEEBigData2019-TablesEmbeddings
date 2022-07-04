@@ -9,7 +9,7 @@ from utils import *
 
 wikitables_folder='wikitables'
 ranking_folder=os.path.join(wikitables_folder,'ranking_results')
-text_file=os.path.join(ranking_folder,'rank_bm25.txt')
+text_file=os.path.join(ranking_folder,'rank_mcon.txt')
 text_file = open(text_file, "r")
 lines = text_file.readlines()
 
